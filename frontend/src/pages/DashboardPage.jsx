@@ -91,6 +91,7 @@ const DashboardPage = () => {
             <div className="stat-value">{formatRupiah(data?.harian?.pengeluaran)}</div>
             <div className="stat-sub">Di luar bahan baku</div>
           </div>
+        </Card>
       </div>
 
       <div className="grid-2 mb-3">
