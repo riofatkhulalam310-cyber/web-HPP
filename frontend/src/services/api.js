@@ -1,7 +1,7 @@
 import axios from 'axios';
 
-// Base API URL - using the local PHP server that we'll run on port 8000
-const API_URL = 'http://localhost:8000';
+// Base API URL - Use environment variable or fallback to localhost
+const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:8000';
 
 // Create axios instance
 const api = axios.create({
