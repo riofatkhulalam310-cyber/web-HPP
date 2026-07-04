@@ -69,17 +69,6 @@ const DashboardPage = () => {
       </div>
 
       <div className="grid-stats mb-3">
-        <Card className="stat-card" glass={true}>
-          <div className="stat-icon" style={{ background: 'rgba(212, 175, 55, 0.15)', color: '#B8960A' }}>
-            <ShoppingCart />
-          </div>
-          <div className="stat-info">
-            <h4>Penjualan (Hari Ini)</h4>
-            <div className="stat-value">{formatRupiah(data?.harian?.penjualan)}</div>
-            <div className="stat-sub">{formatNumber(data?.harian?.unit_terjual)} unit terjual</div>
-          </div>
-        </Card>
-
         <Card className="stat-card">
           <div className="stat-icon" style={{ background: 'var(--primary-100)', color: 'var(--primary-dark)' }}>
             <Wallet />
@@ -102,43 +91,9 @@ const DashboardPage = () => {
             <div className="stat-value">{formatRupiah(data?.harian?.pengeluaran)}</div>
             <div className="stat-sub">Di luar bahan baku</div>
           </div>
-        </Card>
-
-        <Card className="stat-card">
-          <div className="stat-icon" style={{ background: 'rgba(45, 139, 78, 0.1)', color: 'var(--accent-green)' }}>
-            <TrendingUp />
-          </div>
-          <div className="stat-info">
-            <h4>Profit Kotor (Estimasi)</h4>
-            <div className="stat-value">
-              {formatRupiah((data?.harian?.penjualan || 0) - (data?.harian?.total_biaya || 0))}
-            </div>
-            <div className="stat-sub">Penjualan - Total Biaya</div>
-          </div>
-        </Card>
       </div>
 
       <div className="grid-2 mb-3">
-        <Card title="Trend Penjualan & Pengeluaran (30 Hari)">
-          <div className="chart-container">
-            <ResponsiveContainer width="100%" height="100%">
-              <AreaChart data={data?.trend_penjualan || []} margin={{ top: 10, right: 10, left: 0, bottom: 0 }}>
-                <defs>
-                  <linearGradient id="colorPenjualan" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="5%" stopColor="#4CAF50" stopOpacity={0.8}/>
-                    <stop offset="95%" stopColor="#4CAF50" stopOpacity={0}/>
-                  </linearGradient>
-                </defs>
-                <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="var(--border-light)" />
-                <XAxis dataKey="tgl" tickFormatter={(tick) => new Date(tick).getDate()} stroke="var(--text-tertiary)" />
-                <YAxis tickFormatter={(tick) => `Rp${tick/1000}k`} stroke="var(--text-tertiary)" />
-                <Tooltip formatter={(value) => formatRupiah(value)} />
-                <Area type="monotone" dataKey="total" name="Penjualan" stroke="#4CAF50" fillOpacity={1} fill="url(#colorPenjualan)" />
-              </AreaChart>
-            </ResponsiveContainer>
-          </div>
-        </Card>
-
         <Card title="HPP per Produk (Hari Ini)">
           <div className="table-container">
             <table className="data-table">
