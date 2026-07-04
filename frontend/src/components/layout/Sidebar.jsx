@@ -20,7 +20,6 @@ const Sidebar = ({ collapsed, setCollapsed, mobileOpen, setMobileOpen }) => {
       section: 'Utama',
       items: [
         { path: '/', name: 'Dashboard', icon: <LayoutDashboard /> },
-        { path: '/transaksi', name: 'Penjualan', icon: <ShoppingCart /> },
       ]
     },
     {

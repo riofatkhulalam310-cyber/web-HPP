@@ -10,7 +10,6 @@ import Layout from './components/layout/Layout';
 import LoginPage from './pages/LoginPage';
 import RegisterPage from './pages/RegisterPage';
 import DashboardPage from './pages/DashboardPage';
-import TransaksiPage from './pages/TransaksiPage';
 import ProdukPage from './pages/ProdukPage';
 import BahanBakuPage from './pages/BahanBakuPage';
 import SatuanPage from './pages/SatuanPage';
@@ -31,7 +30,6 @@ const App = () => {
             {/* Protected Routes Wrapper */}
             <Route path="/" element={<Layout />}>
               <Route index element={<DashboardPage />} />
-              <Route path="transaksi" element={<TransaksiPage />} />
               <Route path="produk" element={<ProdukPage />} />
               <Route path="bahan-baku" element={<BahanBakuPage />} />
               <Route path="satuan" element={<SatuanPage />} />
